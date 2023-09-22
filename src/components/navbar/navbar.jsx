@@ -12,10 +12,10 @@ const NavBar = () => {
 	// }
 	// return <div>{renderNavbar()}</div>;
 	return (
-		<>
+		<div className="fixed">
 			<HeaderPc />
 			<HeaderBottom />
-		</>
+		</div>
 	);
 };
 

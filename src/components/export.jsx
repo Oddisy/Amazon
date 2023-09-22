@@ -4,6 +4,7 @@ import istockPhoto2 from "../assets/istockphoto2.jpg";
 import istockPhoto3 from "../assets/istockphoto3.jpg";
 import istockPhoto4 from "../assets/istockphoto4.jpg";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import StarIcon from "@mui/icons-material/Star";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import SearchIcon from "@mui/icons-material/Search";
@@ -37,6 +38,7 @@ export {
 	istockPhoto4,
 	Img,
 	LocationOnIcon,
+	StarIcon,
 	ArrowDropDownIcon,
 	ArrowDropUpIcon,
 	SearchIcon,

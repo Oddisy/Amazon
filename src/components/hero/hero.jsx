@@ -64,7 +64,7 @@ const Hero = () => {
 	}, 4500);*/
 	return (
 		<main className="">
-			<div className="bg">
+			<div>
 				<Img ref={slideRef} src={slides[currSlide]} />
 				<button className="mr-20" onClick={handleNextClick}>
 					Go

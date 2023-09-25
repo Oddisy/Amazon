@@ -3,6 +3,7 @@ import istockPhoto1 from "../assets/istockphoto1.jpg";
 import istockPhoto2 from "../assets/istockphoto2.jpg";
 import istockPhoto3 from "../assets/istockphoto3.jpg";
 import istockPhoto4 from "../assets/istockphoto4.jpg";
+
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import StarIcon from "@mui/icons-material/Star";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -23,6 +24,7 @@ import {middlelistitems} from "../components/objects";
 import {bottomlistitems} from "../components/objects";
 import {Link} from "react-router-dom";
 import SignIn from "./signin/signin";
+import Cart from "./Cart/Cart";
 
 export {
 	SignIn,
@@ -50,4 +52,5 @@ export {
 	FooterMiddle,
 	bottomlistitems,
 	FooterBottom,
+	Cart,
 };

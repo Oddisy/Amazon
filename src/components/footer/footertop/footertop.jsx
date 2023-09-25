@@ -1,8 +1,8 @@
 import React from "react";
-import Products from "../../products";
+import Products from "../../products/products";
 const FooterTop = () => {
 	return (
-		<div className="py-6 flex items-center justify-center  w-full">
+		<div className="pb-6 flex items-center justify-center container  w-full sm:overflow-x-hidden">
 			<div className="px-28 text-center">
 				<Products />
 				<h4>See personalized recommendations</h4>

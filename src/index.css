@@ -21,5 +21,13 @@
     .headerBottomHover {
         @apply hover:border h-full w-auto  border-2 border-white 
     }
+    .productLi {
+        @apply flex justify-end p-[4px] gap-4 border-b-[0.5px] border-black 
+    }
+    .productLiHover {
+        @apply bottom-[60%] duration-0
+    }
+
+
 }
 

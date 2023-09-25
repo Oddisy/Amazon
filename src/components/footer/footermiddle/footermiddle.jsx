@@ -4,19 +4,22 @@ import {middlelistitems} from "../../objects";
 import {amazonLogo} from "../../export";
 const FooterMiddle = () => {
 	return (
-		<div className="w-full">
-			<div className="bg-green-950 flex justify-center flex-col align-center  ">
+		<div className="w-full overflow-x-hidden lg:container ">
+			<div className="bg-green-950   flex items-center flex-col align-center  ">
 				<div className="w-full py-3 bg-green-800 flex justify-center text-sm    text-white">
 					Back to top
 				</div>
-				<div className="mx-auto py-8 w-[80%] text-white ">
-					<div className="grid grid-cols-4 gap-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:w-[100%]">
+				<div className="mx-auto py-8 w-[80%] text-center text-white ">
+					<div className="grid  gap-2   md:grid-cols-2 lg:grid-cols-4 lg:w-[100%]">
 						{middlelistitems.map((item, index) => (
 							<FooterMiddleList
 								key={index}
 								title={item.title}
+								className="md:text-xl"
 								children={item.listitem.map((data, index) => (
-									<li key={index}>{data}</li>
+									<li className=" text-gray-400 md:mb-1 md:text-lg" key={index}>
+										{data}
+									</li>
 								))}
 							/>
 						))}

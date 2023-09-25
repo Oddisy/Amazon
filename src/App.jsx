@@ -5,7 +5,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {SignIn} from "./components/export";
 import axios from "axios";
 import {useEffect, useState} from "react";
-
+import {Cart} from "./components/export";
 function App() {
 	const [ApiData, setApiData] = useState([]);
 	async function fetchProductApi() {
@@ -28,6 +28,7 @@ function App() {
 				<Routes>
 					<Route index element={<LandingPage api={ApiData} />} />
 					<Route path="signin" element={<SignIn />} />
+					<Route path="Cart" element={<Cart />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../components/navbar/navbar";
 import Hero from "../components/hero/hero";
 import {Footer} from "../components/export";
-import Products from "../components/products";
+import Products from "../components/products/products";
 const LandingPage = ({api}) => {
 	return (
 		<>

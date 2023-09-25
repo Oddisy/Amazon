@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      maxWidth:{
+        container : "1440px",
+      },
       colors: {
 amazon_background_bg : "#131921",
 amazon_white_text : "#FFFFFF",

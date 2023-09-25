@@ -5,14 +5,16 @@ const FooterBottom = () => {
 	return (
 		<div className=" w-full bg-green-950 py-6">
 			<div className="w-[85%] mx-auto">
-				<div className="grid grid-cols-7 gap-3  place-content-center text-grey">
+				<div className="grid grid-cols-3  md:grid-cols-4 grid-cols-7 gap-3  place-content-center text-grey">
 					{bottomlistitems.map((item, index) => (
 						<FooterMiddleList
 							key={index}
 							className="text-gray-300 pb-4"
 							title={item.title}
 							children={item.listitem.map((data, index) => (
-								<li key={index}>{data}</li>
+								<li className=" text-gray-400 md:text-sm" key={index}>
+									{data}
+								</li>
 							))}
 						/>
 					))}

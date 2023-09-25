@@ -17,7 +17,7 @@ const HeaderBottom = () => {
 		});
 	}, []);
 	return (
-		<div className=" bg-[#232F3E]">
+		<div className=" container bg-[#232F3E]">
 			<div className="flex  ml-8 items-center justify-between w-[470px]  h-[40px]">
 				<div
 					ref={ref}

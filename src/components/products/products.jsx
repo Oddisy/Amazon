@@ -1,10 +1,14 @@
 import React from "react";
 import {StarIcon} from "../export";
+import {useDispatch} from "react-redux";
 import "./products.css";
+import {addToCart} from "../../redux/amazonSlice";
 const Products = ({api}) => {
-	console.log(api);
+	const dispatch = useDispatch();
+
 	return (
-		<div className=" w-full pt-24 container  ">
+		<div className=" w-full pt-24   ">
+			<button>jnklnkljn</button>
 			<div className="mx-auto  w-[95%] sm:grid sm:grid-cols-1  md:grid md:grid-cols-2   lg:grid lg:grid-cols-4 gap-4">
 				{api ? (
 					api?.map((item, index) => (
@@ -17,7 +21,7 @@ const Products = ({api}) => {
 							</div>
 							<ul
 								className="  bg-gray-200 absolute bottom-[60%]  flex flex-col  w-[100%] hover:bottom-[20%] 
-							style={{group-hover:cursor-pointer}}  duration-700"
+							duration-700"
 							>
 								<li className=" productHover productLi">
 									Compare
@@ -36,7 +40,7 @@ const Products = ({api}) => {
 									<span>
 										<StarIcon />
 									</span>
-								</li>{" "}
+								</li>
 								<li className="productHover productLi">
 									compare
 									<span>
@@ -64,8 +68,23 @@ const Products = ({api}) => {
 									<StarIcon />
 								</p>
 							</div>
-							<div className="bg-gray-100">
-								<button className="px-28 py-2 font-semibold rounded-lg bg-yellow-300 bg-gradient-to-tr from-yellow-400 to-yellow-200">
+							<div className="bg-gray-100 ">
+								<button
+									onClick={() =>
+										dispatch(
+											addToCart({
+												id: item.id,
+												category: item.category,
+												title: item.title,
+												description: item.description,
+												price: item.price,
+												image: item.image,
+												quantity: 1,
+											})
+										)
+									}
+									className="px-28 hover:cursor-pointer py-2 w-full font-semibold rounded-lg bg-yellow-300 bg-gradient-to-tr from-yellow-400 to-yellow-200"
+								>
 									Add Cart.
 								</button>
 							</div>

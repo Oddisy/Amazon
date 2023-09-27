@@ -26,6 +26,7 @@ import {Link} from "react-router-dom";
 import SignIn from "./signin/signin";
 import Cart from "./Cart/Cart";
 import Card from "./cards/card";
+import ShowItemNav from "./showitemnav/showitemnav";
 
 export {
 	SignIn,
@@ -55,4 +56,5 @@ export {
 	FooterBottom,
 	Cart,
 	Card,
+	ShowItemNav,
 };

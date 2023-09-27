@@ -2,6 +2,7 @@ import React from "react";
 import {StarIcon} from "../export";
 import {useDispatch} from "react-redux";
 import {Card} from "../export";
+
 import "./products.css";
 import {addToCart} from "../../redux/amazonSlice";
 const Products = ({api}) => {
@@ -13,26 +14,28 @@ const Products = ({api}) => {
 			<div className="mx-auto  w-[95%] sm:grid sm:grid-cols-1  md:grid md:grid-cols-2   lg:grid lg:grid-cols-4 gap-4">
 				{api ? (
 					api?.map((item) => (
-						<Card
-							key={item.id}
-							src={item.image}
-							title={item.title}
-							description={item.description}
-							category={item.category}
-							// onClick={() =>
-							// 	dispatch(
-							// 		addToCart({
-							// 			id: item.id,
-							// 			category: item.category,
-							// 			title: item.title,
-							// 			description: item.description,
-							// 			price: item.price,
-							// 			image: item.image,
-							// 			quantity: 1,
-							// 		})
-							// 	)
-							// }
-						/>
+						<div>
+							<Card
+								key={item.id}
+								src={item.image}
+								title={item.title}
+								description={item.description}
+								category={item.category}
+								onClick={() =>
+									dispatch(
+										addToCart({
+											id: item.id,
+											category: item.category,
+											title: item.title,
+											description: item.description,
+											price: item.price,
+											image: item.image,
+											quantity: 1,
+										})
+									)
+								}
+							/>
+						</div>
 					))
 				) : (
 					<p>No Api</p>

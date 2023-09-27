@@ -17,7 +17,9 @@ amazon_grey_text: "#F3F3F3",
 amazon_text_dark : "#000084",
 amazon_footer_top : "#f9fc50"
       },
-      
+      animation:{
+        'transition': 'transition 0.7s ease',
+      }
     },
   },
   plugins: [],

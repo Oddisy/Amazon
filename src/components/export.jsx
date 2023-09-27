@@ -25,6 +25,7 @@ import {bottomlistitems} from "../components/objects";
 import {Link} from "react-router-dom";
 import SignIn from "./signin/signin";
 import Cart from "./Cart/Cart";
+import Card from "./cards/card";
 
 export {
 	SignIn,
@@ -53,4 +54,5 @@ export {
 	bottomlistitems,
 	FooterBottom,
 	Cart,
+	Card,
 };

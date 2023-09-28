@@ -17,10 +17,9 @@ const HeaderBottom = () => {
 		});
 	}, []);
 	return (
-		<div className=" container bg-[#232F3E]">
+		<div className=" w-[100%] bg-[#232F3E]">
 			<div className="flex  ml-8 items-center justify-between w-[470px]  h-[40px]">
 				<div
-					ref={ref}
 					// function to display sidenav
 					onClick={() => setSideBar(true)}
 					className=" hover:headerBottomHover cursor-pointer  text-white  p-[5px]"
@@ -29,19 +28,21 @@ const HeaderBottom = () => {
 					All
 				</div>
 
-				<div className=" hover:headerBottomHover text-white p-[5px] ">
+				<div className=" hidden md:block lg:block  hover:headerBottomHover text-white p-[5px] ">
 					Today's Deal
 				</div>
-				<div className="  hover:headerBottomHover p-[5px] text-white">
+				<div className=" hidden md:block lg:block  hover:headerBottomHover p-[5px] text-white">
 					Customer Service
 				</div>
-				<div className=" hover:headerBottomHover hover:headerBottomHover  text-white p-[5px]">
+				<div className="hidden md:block lg:block hover:headerBottomHover hover:headerBottomHover  text-white p-[5px]">
 					Registry
 				</div>
-				<div className=" hover:headerBottomHover   text-white p-[5px]">
+				<div className="  hidden md:block lg:block hover:headerBottomHover   text-white p-[5px]">
 					Gift card's
 				</div>
-				<div className="hover:headerBottomHover  text-white  p-[5px]">Sell</div>
+				<div className=" hidden md:block lg:block hover:headerBottomHover  text-white  p-[5px]">
+					Sell
+				</div>
 			</div>
 			{/* sidebar contents */}
 			{SideBar && (

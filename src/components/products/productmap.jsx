@@ -16,8 +16,6 @@ const Products = ({api}) => {
 							className="w-84 relative pt-8 z-[-50] items-center bg-gray-50 border-[1px] border-gray-200  flex flex-col gap-4"
 							key={index}
 						>
-							{/* <Card /> */}
-
 							<div className="h-[70%]">
 								<img className="w-52 h-64 object-contain" src={item.image} />
 							</div>

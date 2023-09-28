@@ -6,7 +6,6 @@ import {Card} from "../export";
 import "./products.css";
 import {addToCart} from "../../redux/amazonSlice";
 const Products = ({api}) => {
-	console.log("this is the api", api);
 	const dispatch = useDispatch();
 
 	return (

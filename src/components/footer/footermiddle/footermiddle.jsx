@@ -4,7 +4,7 @@ import {middlelistitems} from "../../objects";
 import {amazonLogo} from "../../export";
 const FooterMiddle = () => {
 	return (
-		<div className="w-full overflow-x-hidden lg:container ">
+		<div className="w-full overflow-x-hidden  ">
 			<div className="bg-green-950   flex items-center flex-col align-center  ">
 				<div className="w-full py-3 bg-green-800 flex justify-center text-sm    text-white">
 					Back to top

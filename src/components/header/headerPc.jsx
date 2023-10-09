@@ -18,8 +18,8 @@ const HeaderPc = () => {
 	const [languageOver, setlanguageOver] = useState(false);
 
 	return (
-		<div className=" w-full  bg-amazon_background_bg">
-			<div className=" sticky top-0 flex items-center w-[100%] h-[58px] px-1 py-2  bg-amazon_background_bg ">
+		<div className=" w-full flex justify-center  bg-amazon_background_bg">
+			<div className=" sticky top-0 flex items-center w-[95%] h-[58px] px-1 py-2  bg-amazon_background_bg ">
 				{/* Image{amazonLogo} */}
 				<div className="flex items-center gap-6 mr-10 ">
 					<img className=" w-24" src={amazonLogo} alt="amazon logo" />
@@ -179,7 +179,7 @@ const HeaderPc = () => {
 								<span>Carts</span>
 							</span>
 							<span className="flex ">
-								<span className=" absolute top-[-2px] right-[50px] w-4 h-4 flex items-center justify-center text-[10px] rounded-full  bg-yellow-500 font-bold ">
+								<span className=" absolute top-[-2px] right-[-10px] w-4 h-4 flex items-center justify-center text-[10px] rounded-full  bg-yellow-500 font-bold ">
 									0
 								</span>
 							</span>

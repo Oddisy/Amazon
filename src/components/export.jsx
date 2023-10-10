@@ -23,10 +23,11 @@ import FooterBottom from "./footer/footerbottom/footerbottom";
 import {middlelistitems} from "../components/objects";
 import {bottomlistitems} from "../components/objects";
 import {Link} from "react-router-dom";
-import SignIn from "./signin/signin";
+import SignIn from "../pages/signin/signin";
 import Cart from "./Cart/Cart";
 import Card from "./cards/card";
 import ShowItemNav from "./showitemnav/showitemnav";
+import SignInForm from "./forms/signin";
 
 export {
 	SignIn,
@@ -57,4 +58,5 @@ export {
 	Cart,
 	Card,
 	ShowItemNav,
+	SignInForm,
 };

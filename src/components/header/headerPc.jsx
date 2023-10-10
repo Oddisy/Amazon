@@ -22,7 +22,9 @@ const HeaderPc = () => {
 			<div className=" sticky top-0 flex items-center w-[95%] h-[58px] px-1 py-2  bg-amazon_background_bg ">
 				{/* Image{amazonLogo} */}
 				<div className="flex items-center gap-6 mr-10 ">
-					<img className=" w-24" src={amazonLogo} alt="amazon logo" />
+					<Link to="/">
+						<img className=" w-24" src={amazonLogo} alt="amazon logo" />
+					</Link>
 					{/* Deliver  */}
 					<div className="flex items-center w-[80%]">
 						<LocationOnIcon className="text-amazon_white_text mt-2" />
@@ -173,7 +175,7 @@ const HeaderPc = () => {
 					{/* Return and header ends */}
 					{/* <Cart /> */}
 					<Link to="/Cart">
-						<div className=" relative hover:border-2 gap-0 font-bold flex items-center mt-1 justify-center h-[40px]   w-[25%]">
+						<div className=" relative gap-0 font-bold flex items-center mt-1 justify-center h-[40px]   w-[25%]">
 							<span className="w-full items-baseline flex">
 								<ShoppingCartOutlinedIcon />
 								<span>Carts</span>

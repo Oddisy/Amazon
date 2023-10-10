@@ -7,7 +7,7 @@ const HeaderMobile = () => {
 	return (
 		<div className="  w-full px-4 py-2   bg-amazon_background_bg ">
 			{/* Image{amazonLogo} */}
-			<div className="flex items-center justify-between gap-4 mx-4 ">
+			<div className="flex items-center justify-between gap-4 mx-2 ">
 				<img className=" w-24" src={amazonLogo} alt="" />
 				{/* Account and sign in  */}
 				<div className=" hover:border-2 gap-0 p-1  flex  flex-col items-center justify-center h-full  w-[130px] leading-tight  ">

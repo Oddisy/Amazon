@@ -10,12 +10,11 @@ const Products = ({api}) => {
 
 	return (
 		<div className=" w-full pt-24   ">
-			<div className="mx-auto  w-[95%]   sm:grid sm:grid-cols-1   md:grid md:grid-cols-2   lg:grid lg:grid-cols-4 gap-4">
+			<div className="mx-auto  w-[95%]   grid grid-cols-1   md:grid md:grid-cols-2   lg:grid lg:grid-cols-4 gap-4">
 				{api ? (
 					api?.map((item) => (
-						<div>
+						<div key={item.id}>
 							<Card
-								key={item.id}
 								src={item.image}
 								title={item.title}
 								description={item.description}
@@ -23,6 +22,7 @@ const Products = ({api}) => {
 								onClick={() =>
 									dispatch(
 										addToCart({
+											src: item.image,
 											id: item.id,
 											category: item.category,
 											title: item.title,

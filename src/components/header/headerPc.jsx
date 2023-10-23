@@ -1,18 +1,19 @@
 import {useState, React} from "react";
-import {amazonLogo} from "../export";
-import {LocationOnIcon} from "../export";
-import {ArrowDropDownIcon} from "../export";
-import {ArrowDropUpIcon} from "../export";
-import {SearchIcon} from "../export";
-import {usaFlag} from "../export";
-import {ShoppingCartOutlinedIcon} from "../export";
-import {allitems} from "../export";
-import {List} from "../export";
-import {Link} from "../export";
-import {SignIn} from "../export";
-import {Cart} from "../export";
+import {useSelector} from "react-redux";
+import {
+	amazonLogo,
+	LocationOnIcon,
+	ArrowDropDownIcon,
+	ArrowDropUpIcon,
+	SearchIcon,
+	ShoppingCartOutlinedIcon,
+	allitems,
+	List,
+	Link,
+} from "../export";
 
 const HeaderPc = () => {
+	const products = useSelector((state) => state.amazonReducer.products);
 	const [displayItems, setDisplayItems] = useState(false);
 	const [accountOver, setaccountOver] = useState(false);
 	const [languageOver, setlanguageOver] = useState(false);
@@ -174,7 +175,7 @@ const HeaderPc = () => {
 					</div>
 					{/* Return and header ends */}
 					{/* <Cart /> */}
-					<Link to="/Cart">
+					<Link to="/Cartpage">
 						<div className=" relative gap-0 font-bold flex items-center mt-1 justify-center h-[40px]   w-[25%]">
 							<span className="w-full items-baseline flex">
 								<ShoppingCartOutlinedIcon />
@@ -182,7 +183,7 @@ const HeaderPc = () => {
 							</span>
 							<span className="flex ">
 								<span className=" absolute top-[-2px] right-[-10px] w-4 h-4 flex items-center justify-center text-[10px] rounded-full  bg-yellow-500 font-bold ">
-									0
+									{products.length > 0 ? products.length : 0}
 								</span>
 							</span>
 						</div>

@@ -2,9 +2,8 @@ import React from "react";
 import LandingPage from "./pages/landingpage";
 import "./App.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {SignIn} from "./components/export";
+import {SignIn, Cartpage} from "./components/export";
 
-import {Cart} from "./components/export";
 function App() {
 	return (
 		<div>
@@ -12,7 +11,7 @@ function App() {
 				<Routes>
 					<Route index element={<LandingPage />} />
 					<Route path="signin" element={<SignIn />} />
-					<Route path="Cart" element={<Cart />} />
+					<Route path="Cartpage" element={<Cartpage />} />
 				</Routes>
 			</BrowserRouter>
 		</div>

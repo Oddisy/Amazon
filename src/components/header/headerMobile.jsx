@@ -3,7 +3,9 @@ import {Link} from "react-router-dom";
 import {ShoppingCartOutlinedIcon, amazonLogo} from "../export";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import ArrowDropDown from "@mui/icons-material/ArrowDropDown";
+import {useSelector} from "react-redux";
 const HeaderMobile = () => {
+	const products = useSelector((state) => state.amazonReducer.products);
 	return (
 		<div className="  w-full px-4 py-2   bg-amazon_background_bg ">
 			{/* Image{amazonLogo} */}
@@ -27,7 +29,7 @@ const HeaderMobile = () => {
 						</span>
 						<span className="flex ">
 							<span className=" absolute top-[-2px] right-[-10px] w-4 h-4 flex items-center justify-center text-[10px] rounded-full  bg-yellow-500 font-bold ">
-								0
+								{products.length > 0 ? products.length : 0}
 							</span>{" "}
 						</span>
 					</div>

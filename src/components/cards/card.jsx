@@ -1,6 +1,8 @@
 import React, {useState, useRef} from "react";
 import {StarIcon} from "../export";
 import {ShowItemNav} from "../export";
+import cn from "classnames";
+import Button from "../button/button";
 
 const Card = ({onClick, src, title, price, category, description}) => {
 	const ref = useRef();
@@ -35,14 +37,16 @@ const Card = ({onClick, src, title, price, category, description}) => {
 				</p>
 			</div>
 			<div className="bg-gray-100  cursor-pointer">
-				<button
+				<Button
 					onMouseEnter={() => setIsHovered(false)}
 					onMouseLeave={() => setIsHovered(true)}
 					onClick={onClick}
-					className="px-28  py-2 w-full cursor-pointer font-semibold rounded-lg bg-yellow-300 bg-gradient-to-tr from-yellow-400 to-yellow-200"
-				>
-					Add Cart.
-				</button>
+					buttonText="Add Cart."
+					className={cn(
+						`buttonStyle
+						${isHovered ? "hover:bg-yellow-500 active:bg-yellow-700" : ""}`
+					)}
+				/>
 			</div>
 		</div>
 	);

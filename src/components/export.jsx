@@ -3,7 +3,6 @@ import istockPhoto1 from "../assets/istockphoto1.jpg";
 import istockPhoto2 from "../assets/istockphoto2.jpg";
 import istockPhoto3 from "../assets/istockphoto3.jpg";
 import istockPhoto4 from "../assets/istockphoto4.jpg";
-
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import StarIcon from "@mui/icons-material/Star";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
@@ -14,20 +13,23 @@ import Img from "../components/img";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import List from "./lists/list";
 import Carousel from "./carousel/carousel";
-import {sidecontents} from "../components/objects";
-import {allitems} from "../components/objects";
 import FooterTop from "./footer/footertop/footertop";
 import Footer from "./footer/footermain/footer";
 import FooterMiddle from "./footer/footermiddle/footermiddle";
 import FooterBottom from "./footer/footerbottom/footerbottom";
-import {middlelistitems} from "../components/objects";
-import {bottomlistitems} from "../components/objects";
+import {
+	sidecontents,
+	middlelistitems,
+	bottomlistitems,
+	allitems,
+} from "../components/objects";
 import {Link} from "react-router-dom";
 import SignIn from "../pages/signin/signin";
-import Cart from "./Cart/Cart";
+import Cartpage from "../pages/cartpage/cartpage";
 import Card from "./cards/card";
 import ShowItemNav from "./showitemnav/showitemnav";
 import SignInForm from "./forms/signin";
+import Cart from "./Cart/Cart";
 
 export {
 	SignIn,
@@ -55,8 +57,9 @@ export {
 	FooterMiddle,
 	bottomlistitems,
 	FooterBottom,
-	Cart,
 	Card,
+	Cart,
 	ShowItemNav,
 	SignInForm,
+	Cartpage,
 };

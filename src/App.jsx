@@ -1,4 +1,5 @@
 import React from "react";
+import {ScrollRestoration} from "react-router-dom";
 import LandingPage from "./pages/landingpage";
 import "./App.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom";

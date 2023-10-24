@@ -10,7 +10,10 @@ const HeaderMobile = () => {
 		<div className="  w-full px-4 py-2   bg-amazon_background_bg ">
 			{/* Image{amazonLogo} */}
 			<div className="flex items-center justify-between gap-4 mx-2 ">
-				<img className=" w-24" src={amazonLogo} alt="" />
+				<Link to="/">
+					{" "}
+					<img className=" w-24" src={amazonLogo} alt="" />
+				</Link>
 				{/* Account and sign in  */}
 				<div className=" hover:border-2 gap-0 p-1  flex  flex-col items-center justify-center h-full  w-[130px] leading-tight  ">
 					<span>
@@ -21,7 +24,7 @@ const HeaderMobile = () => {
 				</div>
 				{/* Account and sign in ends  */}
 				{/* <Cart /> */}
-				<Link to="/Cart">
+				<Link to="/Cartpage">
 					<div className=" relative hover:border-2 gap-0 font-bold flex items-center mt-1 justify-center h-[40px]   w-[25%]">
 						<span className="w-full text-white items-baseline flex">
 							<ShoppingCartOutlinedIcon />

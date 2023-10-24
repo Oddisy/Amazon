@@ -30,7 +30,29 @@ export const amazonSlice = createSlice({
 				(item) => item.id !== action.payload
 			);
 		},
+		resetCart: (state) => {
+			state.products = [];
+		},
+		increaseQuantity: (state, action) => {
+			const item = state.products.find((item) => item.id === action.payload);
+			item.quantity++;
+		},
+		decreaseQuantity: (state, action) => {
+			const item = state.products.find((item) => item.id === action.payload);
+			if (item.quantity === 1) {
+				item.quantity = 1;
+			} else {
+				item.quantity--;
+			}
+		},
 	},
 });
-export const {addToCart, toggleDescription, deleteItem} = amazonSlice.actions;
+export const {
+	addToCart,
+	increaseQuantity,
+	decreaseQuantity,
+	toggleDescription,
+	deleteItem,
+	resetCart,
+} = amazonSlice.actions;
 export default amazonSlice.reducer;

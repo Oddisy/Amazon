@@ -13,7 +13,7 @@ const Card = ({onClick, src, title, price, category, description}) => {
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}
 			ref={ref}
-			className=" w-84 relative pt-8 items-center mb-4 pb-4 rounded  bg-gray-50 border-[1px] border-gray-200  flex flex-col gap-4"
+			className=" drop-shadow-lg w-84 relative pt-8 items-center mb-4 pb-4 rounded  bg-gray-50 border-[1px] border-gray-200  flex flex-col gap-4"
 		>
 			<div className="h-64">
 				<img className="w-52 h-full object-contain" src={src} />

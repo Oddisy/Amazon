@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 import Shoppingcart from "../../components/shoppingcart/shoppingcart";
 import {useSelector, useDispatch} from "react-redux";
-
 import Totalprice from "../totalprice/totalprice";
+import Emptycart from "../emptycart/emptycart";
 function Cart() {
 	// this is used to get all products data from the Redux store
 	const products = useSelector((state) => state.amazonReducer.products);
@@ -34,7 +34,9 @@ function Cart() {
 					</div>
 				</div>
 			) : (
-				<div className="h-96">No Products</div>
+				<>
+					<Emptycart />
+				</>
 			)}
 		</>
 	);

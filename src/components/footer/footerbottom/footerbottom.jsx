@@ -3,7 +3,7 @@ import FooterMiddleList from "../footermiddlelist/footermiddlelist";
 import {bottomlistitems} from "../../export";
 const FooterBottom = () => {
 	return (
-		<div className=" w-full bg-green-950 py-6">
+		<div className=" w-full bg-[#131A22] py-6">
 			<div className="w-[85%] mx-auto">
 				<div className="grid grid-cols-3  md:grid-cols-4 lg:grid-cols-7 gap-3  place-content-center text-grey">
 					{bottomlistitems.map((item, index) => (
@@ -12,7 +12,10 @@ const FooterBottom = () => {
 							className="text-gray-300 pb-4"
 							title={item.title}
 							children={item.listitem.map((data, index) => (
-								<li className=" text-gray-400 md:text-sm" key={index}>
+								<li
+									className=" text-[.7rem] font-semibold text-gray-400 md:text-sm"
+									key={index}
+								>
 									{data}
 								</li>
 							))}

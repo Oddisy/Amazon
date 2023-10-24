@@ -39,7 +39,7 @@ const LandingPage = () => {
 		<div>
 			{isLoading ? (
 				<div
-					className={`italic backdrop-blur absolute top-0 h-[100vh] w-[100%] flex items-center justify-center text-white
+					className={`italic absolute top-0 h-[100vh] w-[100%] flex items-center justify-center text-white
 					 bg-opacity-[0.5]  z-50 ${ApiData ? "bg-amazon_background_bg" : " "}`}
 				>
 					{isLoading ? (
@@ -55,7 +55,7 @@ const LandingPage = () => {
 				<NavBar />
 			</div>
 			{/* <Hero /> */}
-			<div className={`${isLoading ? " hidden" : <p></p>}`}>
+			<div className={`${isLoading ? " hidden" : <span></span>}`}>
 				<Footer />
 			</div>
 		</div>

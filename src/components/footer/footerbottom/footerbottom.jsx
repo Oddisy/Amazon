@@ -1,6 +1,6 @@
 import React from "react";
 import FooterMiddleList from "../footermiddlelist/footermiddlelist";
-import {bottomlistitems} from "../../export";
+import {bottomlistitems} from "../../exports";
 const FooterBottom = () => {
 	return (
 		<div className=" w-full bg-[#131A22] py-6">

@@ -6,7 +6,7 @@ import {
 	istockPhoto4,
 	Img,
 	Carousel,
-} from "../export";
+} from "../exports";
 
 const Hero = () => {
 	const slides = [istockPhoto1, istockPhoto2, istockPhoto3, istockPhoto4];

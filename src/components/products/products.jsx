@@ -1,7 +1,7 @@
 import React from "react";
-import {StarIcon} from "../export";
+import {StarIcon} from "../exports";
 import {useDispatch} from "react-redux";
-import {Card} from "../export";
+import {Card} from "../exports";
 import "./products.css";
 import {addToCart} from "../../redux/amazonSlice";
 

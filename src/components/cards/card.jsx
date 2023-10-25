@@ -1,6 +1,6 @@
 import React, {useState, useRef} from "react";
-import {StarIcon} from "../export";
-import {ShowItemNav} from "../export";
+import {StarIcon} from "../exports";
+import {ShowItemNav} from "../exports";
 import cn from "classnames";
 import Button from "../button/button";
 

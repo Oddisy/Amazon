@@ -6,7 +6,7 @@ import {
 	ShoppingCartOutlinedIcon,
 	amazonLogo,
 	sidecontents,
-} from "../export";
+} from "../exports";
 import CloseSharpIcon from "@mui/icons-material/CloseSharp";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -32,8 +32,8 @@ const HeaderMobile = () => {
 	}, []);
 
 	return (
-		<div className="w-full absolute -top-2 bg-amazon_background_bg">
-			<div className="w-[94%] flex items-center flex-col mx-auto py-2">
+		<div className="w-full absolute px-auto -top-4 pt-2 bg-amazon_background_bg">
+			<div className="w-[94%] flex items-center flex-col  py-2">
 				<div className="flex items-center justify-between w-[96%]  mb-2">
 					{/* Logo */}
 					<div className="w-1/2 flex justify-start">
@@ -62,10 +62,10 @@ const HeaderMobile = () => {
 							/* sidebar background color on display */
 							<div
 								ref={ref}
-								className="w-full flex fixed top-0 left-0 h-screen bg-black bg-opacity-50"
+								className="w-full flex fixed top-0 left-0 h-screen bg-black bg-opacity-90"
 							>
 								{/* sidebar container  */}
-								<div className=" w-[50%] bg-white h-full border-black relative">
+								<div className=" w-[75%] bg-white h-full border-black relative">
 									{/* sidebar header  */}
 									<div
 										className=" flex text-white tracking-wide  py-2 px-6
@@ -104,7 +104,11 @@ const HeaderMobile = () => {
 								</Link>
 							</span>
 						</div>
-						<div className="relative hover:border-2 gap-0 font-bold flex items-center mt-1 justify-center h-[40px] ">
+						<div
+							className={`relative hover:border-2 gap-0 font-bold flex items-center mt-1 justify-center h-[40px] ${
+								SideBar && "-z-20"
+							} `}
+						>
 							<Link to="/Cartpage">
 								<span className="w-full text-white items-baseline flex">
 									<ShoppingCartOutlinedIcon />
@@ -144,7 +148,7 @@ const HeaderMobile = () => {
 					</span>
 				</div>
 			</div>
-			<div className="flex py-2 px-4 bg-slate-700 text-amazon_white_text items-center">
+			<div className="flex w-[94%] py-2 px-4 bg-slate-700 text-amazon_white_text items-center">
 				<LocationOnIcon />
 				<div className=" text-[.8rem] ">
 					Deliver to Nigeria

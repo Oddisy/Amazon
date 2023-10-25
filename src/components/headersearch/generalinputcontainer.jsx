@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import {ArrowDropDownIcon, SearchIcon, allitems} from "../export";
+import {ArrowDropDownIcon, SearchIcon, allitems} from "../exports";
 
 function Generalinputcontainer() {
 	const [displayItems, setDisplayItems] = useState(false);

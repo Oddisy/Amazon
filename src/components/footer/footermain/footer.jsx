@@ -1,7 +1,7 @@
 import React from "react";
 import FooterTop from "../footertop/footertop";
-import {FooterMiddle} from "../../export";
-import {FooterBottom} from "../../export";
+import {FooterMiddle} from "../../exports";
+import {FooterBottom} from "../../exports";
 const Footer = () => {
 	return (
 		<>

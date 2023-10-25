@@ -9,7 +9,7 @@ import {
 	Generalinputcontainer,
 	List,
 	Link,
-} from "../export";
+} from "../exports";
 
 const HeaderPc = () => {
 	const products = useSelector((state) => state.amazonReducer.products);

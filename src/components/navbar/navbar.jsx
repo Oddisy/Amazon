@@ -5,10 +5,11 @@ import HeaderBottom from "../header/headerBottom";
 import HeaderMobile from "../header/headerMobile";
 const NavBar = () => {
 	const theme = useTheme();
-	const isSmall = useMediaQuery(theme.breakpoints.down("1000"));
+	const isSmall = useMediaQuery(theme.breakpoints.down("700"));
+	const isMedium = useMediaQuery(theme.breakpoints.down("1000"));
 
 	function renderNavbar() {
-		return isSmall ? (
+		return isSmall || isMedium ? (
 			<div className="flex flex-col ">
 				{" "}
 				<HeaderMobile /> <HeaderBottom />{" "}
@@ -26,12 +27,6 @@ const NavBar = () => {
 			<div className="fixed top-0 w-screen z-50">{renderNavbar()}</div>
 		</div>
 	);
-	// return (
-	// 	<div className="fixed">
-	// 		<HeaderPc />
-	// 		<HeaderBottom />
-	// 	</div>
-	// );
 };
 
 export default NavBar;

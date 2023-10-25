@@ -1,15 +1,15 @@
 import React from "react";
-import {Form, amazonLogo} from "../../components/exports";
-import Button from "../../components/button/button";
-Button;
+import Form from "../../components/forms/form";
+import {amazonLogo} from "../../components/exports";
+import {Button} from "@mui/material";
 
-const SignIn = () => {
+function Signup() {
 	return (
 		<div className=" min-h-screen w-full overflow-y-hidden">
 			<div className=" flex items-center justify-center flex-col max-w-screen-xl mx-auto">
 				<div
 					className="w-full lg:w-1/2 h-auto lg:h-auto  pb-2 bg-[#FFFFFF] 
-				 p-4"
+             p-4"
 				>
 					<div className="flex items-center flex-col">
 						<span>
@@ -56,6 +56,6 @@ const SignIn = () => {
 			</div>
 		</div>
 	);
-};
+}
 
-export default SignIn;
+export default Signup;

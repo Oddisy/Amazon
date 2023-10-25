@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import {BiPlay} from "react-icons/Bi";
-import Button from "../../button/button";
-const SignInForm = () => {
+import Button from "../button/button";
+const Form = () => {
 	const [needHelp, setNeedHelp] = useState(false);
 
 	return (
-		<div className="lg:w-[45.9%] w-[87%] sm:w-[55%] md:w-[50%]  p-6 rounded-lg border-[0.3px] border-gray-200  outline-0 flex flex-col gap-4 h-auto ">
+		<div className="lg:w-[58%] w-[87%] sm:w-[55%] md:w-[50%]  p-6 rounded-lg border-[0.3px] border-gray-200  outline-0 flex flex-col gap-4 h-auto ">
 			{/* Sign up form header */}
 			<h1 className="font-normal lg:text-3xl">Sign In</h1>
 			{/* sign up form header ends here */}
@@ -72,4 +72,4 @@ const SignInForm = () => {
 	);
 };
 
-export default SignInForm;
+export default Form;

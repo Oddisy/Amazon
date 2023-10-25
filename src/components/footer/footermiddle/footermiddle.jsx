@@ -2,9 +2,9 @@ import React from "react";
 import FooterMiddleList from "../footermiddlelist/footermiddlelist";
 import LanguageIcon from "@mui/icons-material/Language";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import {usaFlag} from "../../export";
+import {usaFlag} from "../../exports";
 import {middlelistitems} from "../../objects";
-import {amazonLogo} from "../../export";
+import {amazonLogo} from "../../exports";
 const FooterMiddle = () => {
 	return (
 		<div className="w-full overflow-x-hidden  ">

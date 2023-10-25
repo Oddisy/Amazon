@@ -1,6 +1,6 @@
 import React from "react";
 import NavBar from "../../components/navbar/navbar";
-import {Cart, Footer} from "../../components/export";
+import {Cart, Footer} from "../../components/exports";
 function Cartpage() {
 	return (
 		<div>

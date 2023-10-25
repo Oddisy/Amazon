@@ -5,9 +5,10 @@ const SideNav = ({
 	productonecontent,
 	productwocontent,
 	producthreecontent,
+	className,
 }) => {
 	return (
-		<div>
+		<div className={className}>
 			<h3 className="font-bold  mt-2 px-6">{titlecontent}</h3>
 			<ul className="border-b-2">
 				<li className="flex justify-between px-6 py-2">

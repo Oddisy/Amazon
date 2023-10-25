@@ -5,7 +5,7 @@ const SignInForm = () => {
 	const [needHelp, setNeedHelp] = useState(false);
 
 	return (
-		<div className="w-[45.9%]  p-6 rounded-lg border-[0.3px] border-gray-200  outline-0 flex flex-col gap-4 h-auto ">
+		<div className="lg:w-[45.9%] w-[87%] sm:w-[55%] md:w-[50%]  p-6 rounded-lg border-[0.3px] border-gray-200  outline-0 flex flex-col gap-4 h-auto ">
 			{/* Sign up form header */}
 			<h1 className="font-normal lg:text-3xl">Sign In</h1>
 			{/* sign up form header ends here */}
@@ -22,7 +22,10 @@ const SignInForm = () => {
 					/>
 				</label>
 
-				<Button buttonText="Continue" className="py-1 buttonStyle" />
+				<Button
+					buttonText="Continue"
+					className="py-1 flex items-center justify-center buttonStyle"
+				/>
 			</form>
 			{/* sign up form field ends here  */}
 			{/* terms of services  */}

@@ -1,18 +1,17 @@
-import {useState, React} from "react";
+import React from "react";
 import {useSelector} from "react-redux";
 import {
 	amazonLogo,
 	LocationOnIcon,
 	ArrowDropDownIcon,
-	ArrowDropUpIcon,
 	ShoppingCartOutlinedIcon,
 	Generalinputcontainer,
-	List,
 	Link,
 } from "../exports";
 
 const HeaderPc = () => {
 	const products = useSelector((state) => state.amazonReducer.products);
+	console.log(products);
 
 	return (
 		<div className=" w-full flex justify-center  bg-amazon_background_bg">
@@ -20,7 +19,7 @@ const HeaderPc = () => {
 				{/* Image{amazonLogo} */}
 				<div className="flex items-center gap-6 mr-10 ">
 					<Link to="/">
-						<img className=" w-24" src={amazonLogo} alt="amazon logo" />
+						<img className="h-14 w-32" src={amazonLogo} alt="amazon logo" />
 					</Link>
 					{/* Deliver  */}
 					<div className="flex items-center w-[80%]">

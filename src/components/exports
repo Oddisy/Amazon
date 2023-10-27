@@ -18,6 +18,7 @@ import FooterTop from "./footer/footertop/footertop";
 import Footer from "./footer/footermain/footer";
 import FooterMiddle from "./footer/footermiddle/footermiddle";
 import FooterBottom from "./footer/footerbottom/footerbottom";
+import emptyCART from "../assets/empty_cart.svg";
 
 import {
 	sidecontents,
@@ -31,7 +32,7 @@ import Cartpage from "../pages/cartpage/cartpage";
 import Card from "./cards/card";
 import ShowItemNav from "./showitemnav/showitemnav";
 import Form from "./forms/form";
-import Cart from "./Cart/Cart";
+import Cart from "../../src/components/Carts/maincart/maincart";
 import Signup from "../pages/signup/signup";
 
 export {
@@ -67,4 +68,5 @@ export {
 	ShowItemNav,
 	Form,
 	Cartpage,
+	emptyCART,
 };

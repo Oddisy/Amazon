@@ -1,8 +1,8 @@
 import React from "react";
-import LandingPage from "./pages/landingpage";
 import "./App.css";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {SignIn, Signup, Cartpage} from "./components/exports";
+import LandingPage from "../src/pages/Landingpage/landingpage";
 
 function App() {
 	return (

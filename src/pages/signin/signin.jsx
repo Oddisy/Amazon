@@ -1,9 +1,34 @@
 import React from "react";
 import {Form, amazonLogo} from "../../components/exports";
 import Button from "../../components/button/button";
+import {Link} from "react-router-dom";
+// importing validation library for validations
+import {useFormik} from "formik";
+import * as Yup from "yup";
 Button;
+const initialValues = {
+	username: "",
+	password: "",
+};
+const onSubmit = (values) => {
+	// console.log("form value", values);
+};
 
-const SignIn = () => {
+const validationSchema = Yup.object({
+	username: Yup.string()
+		.min(5, "Name is too short!")
+		.max(40, "Name is too long")
+		.required("Email is Required!"),
+	password: Yup.string().length(8).required("Password is required!"),
+});
+
+const Signin = () => {
+	// store formik fields in a variable
+	const formik = useFormik({
+		initialValues,
+		onSubmit,
+		validationSchema,
+	});
 	return (
 		<div className=" min-h-screen w-full overflow-y-hidden">
 			<div className=" flex items-center justify-center flex-col max-w-screen-xl mx-auto">
@@ -12,11 +37,19 @@ const SignIn = () => {
 				 p-4"
 				>
 					<div className="flex items-center flex-col">
-						<span>
-							<img src={amazonLogo} className="h-8 mt-4 mb-4 lg:w-16" alt="" />
-						</span>
+						<Link to="/">
+							<img
+								src={amazonLogo}
+								className="h-16 lg:h-8 mt-4 mb-4 lg:w-16"
+								alt=""
+							/>
+						</Link>
 						{/* sign in form */}
-						<Form />
+						<Form
+							onChange={formik.handleChange}
+							value={formik.values.username}
+							onBlur={formik.handleBlur}
+						/>
 						{/* sign in form ends here  */}
 						<div className="flex lg:w-[58%] w-[87%] sm:w-[55%] md:w-[50%]  pt-2  items-start">
 							<span className=" mt-2 w-[29%] border-b-[0.3px] border-gray-300 "></span>
@@ -26,16 +59,21 @@ const SignIn = () => {
 							<span className="w-[29%] mt-2 border-b-[0.3px] border-gray-300"></span>
 						</div>
 						{/* button */}
-						<Button
-							className="py-1 lg:w-[58%] w-[87%] sm:w-[55%] md:w-[50%]  text-[0.9rem] drop-shadow-lg  hover:bg-gray-200 bg-gray-50 bg-gradient-to-tr from-gray-50 to-gray-50; px-0 flex items-center justify-center buttonStyle"
-							buttonText="Create your Amazon account"
-						/>
+						<Link
+							className="lg:w-[58%] w-[87%] sm:w-[55%] md:w-[50%]"
+							to="/signup"
+						>
+							<Button
+								className="py-1 w-full focus:shadow-outline-blue  text-[0.9rem] drop-shadow-lg  hover:bg-gray-200 bg-gray-50 bg-gradient-to-tr from-gray-50 to-gray-50; px-0 flex items-center justify-center buttonStyle"
+								buttonText="Create your Amazon account"
+							/>
+						</Link>
 					</div>
 				</div>
 				<div className="h-[0.1px] bg-gray-200 w-full mt-2 drop-shadow-lg"></div>
 				<div className=" flex justify-center  w-full mt-2 h-auto">
 					<div className="w-1/2  flex justify-center  ">
-						<div className="flex flex-col gap-4 mt-2 lg:w-[40%] w-[87%] sm:w-[55%] md:w-[50%]    ">
+						<div className="flex flex-col gap-4 mt-2 lg:w-[40%] w-[100%] sm:w-[55%] md:w-[50%]    ">
 							<div className="flex justify-between">
 								<span className="text-[#374faf] text-[.7rem] font-semibold  hover:text-red-400 hover:underline cursor-pointer">
 									Conditions of Use
@@ -47,9 +85,9 @@ const SignIn = () => {
 									help
 								</span>
 							</div>
-							<p className="text-[.7rem]">
+							<span className="text-[.7rem]">
 								© 1996-2023, Amazon.com, Inc. or its affiliates
-							</p>
+							</span>
 						</div>
 					</div>
 				</div>
@@ -58,4 +96,4 @@ const SignIn = () => {
 	);
 };
 
-export default SignIn;
+export default Signin;

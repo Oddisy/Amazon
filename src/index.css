@@ -34,4 +34,7 @@
 	.shadow-outline-blue {
 		box-shadow: #a6e7f3 0px 0px 0px 3px;
 	}
+	.formLinksHover {
+		@apply hover:text-red-400 hover:underline cursor-pointer;
+	}
 }

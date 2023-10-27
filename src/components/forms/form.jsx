@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import {BiPlay} from "react-icons/Bi";
 import Button from "../button/button";
-const Form = () => {
+import Input from "../input/input";
+const Form = ({onChange, value, onBlur}) => {
 	const [needHelp, setNeedHelp] = useState(false);
 
 	return (
@@ -11,25 +12,25 @@ const Form = () => {
 			{/* sign up form header ends here */}
 			{/* Sign up form field */}
 			<form className="flex flex-col gap-4" action="#">
-				<label htmlFor="email">
-					<p className="text-[.8rem] mb-1 font-semibold">
-						Email or mobile phone number
-					</p>
-					{/* form input */}
-					<input
-						className="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
-						type="email"
-					/>
-				</label>
+				<Input
+					htmlFor="email"
+					labelTextClassName="text-[.8rem] mb-1 font-semibold"
+					labelText="Email or mobile phone number"
+					inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
+					type="email"
+					onChange={onChange}
+					onBlur={onBlur}
+					value={value}
+				/>
 
 				<Button
 					buttonText="Continue"
-					className="py-1 flex items-center justify-center buttonStyle"
+					className="py-1 flex items-center justify-center buttonStyle focus:shadow-outline-blue"
 				/>
 			</form>
 			{/* sign up form field ends here  */}
 			{/* terms of services  */}
-			<p className="text-[.8rem]">
+			<div className="text-[.8rem]">
 				By continuing, you agree to Amazon's{" "}
 				<span className="text-[#374faf] font-semibold  hover:text-red-400 hover:underline cursor-pointer">
 					Conditions of Use
@@ -38,9 +39,9 @@ const Form = () => {
 				<span className="text-[#374faf] font-semibold cursor-pointer hover:text-red-400 hover:underline">
 					Privacy Notice.
 				</span>
-			</p>
+			</div>
 			{/* forgot password or need other services starts here */}
-			<p
+			<div
 				onClick={() => {
 					setNeedHelp(!needHelp);
 				}}
@@ -66,7 +67,7 @@ const Form = () => {
 						</p>
 					</span>
 				)}
-			</p>
+			</div>
 			{/* forgot password or need other services starts here */}
 		</div>
 	);

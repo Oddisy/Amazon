@@ -1,10 +1,32 @@
 import React from "react";
 
-function Input({htmlFor, type, fName, inputClassName}) {
+function Input({
+	htmlFor,
+	type,
+	fName,
+	yourName,
+	inputClassName,
+	labelTextClassName,
+	labelText,
+	placeholder,
+	onChange,
+	value,
+	onBlur,
+}) {
 	return (
 		<>
 			<label htmlFor={htmlFor}>
-				<input type={type} name={fName} className={`${inputClassName}`} />
+				<p className={labelTextClassName}>{labelText}</p>
+				<input
+					id={yourName}
+					type={type}
+					name={fName}
+					placeholder={placeholder}
+					className={`${inputClassName}`}
+					onChange={onChange}
+					value={value}
+					onBlur={onBlur}
+				/>
 			</label>
 		</>
 	);

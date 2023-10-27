@@ -1,8 +1,8 @@
 import React from "react";
-import NavBar from "../components/navbar/navbar";
-import Hero from "../components/hero/hero";
-import {Footer} from "../components/exports";
-import Products from "../components/products/products";
+import NavBar from "../../components/navbar/navbar";
+import Hero from "../../components/hero/hero";
+import {Footer} from "../../components/exports";
+import Products from "../../components/products/products";
 import axios from "axios";
 import {useEffect, useState} from "react";
 const LandingPage = () => {

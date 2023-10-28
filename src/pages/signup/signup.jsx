@@ -2,14 +2,13 @@ import React, {useState} from "react";
 import {useDispatch} from "react-redux";
 import {Formik, Field, ErrorMessage, Form} from "formik";
 import * as Yup from "yup";
-
 import {useSignupMutation} from "../../app/api";
 import {amazonLogo} from "../../components/exports";
 import {useNavigate, Link} from "react-router-dom";
 import Button from "../../components/button/button";
-import {BiPlay} from "react-icons/Bi";
 import {toast} from "react-hot-toast";
 import Input from "../../components/input/input";
+import {PlayArrow} from "@mui/icons-material";
 
 const SignIn = () => {
 	// yup validation schema
@@ -167,7 +166,7 @@ const SignIn = () => {
 									<Link to="/Signin">
 										<p className="ml-1 flex items-center formLinksHover">
 											Sign in
-											<BiPlay className=" text-gray-500" />
+											<PlayArrow className=" text-gray-500" />
 										</p>
 									</Link>
 								</div>
@@ -176,7 +175,7 @@ const SignIn = () => {
 
 									<p className="ml-1 flex items-center formLinksHover">
 										Create a free business account
-										<BiPlay className=" text-gray-500" />
+										<PlayArrow className=" text-gray-500" />
 									</p>
 								</div>
 							</div>

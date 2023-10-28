@@ -35,16 +35,15 @@ const SignIn = () => {
 
 	const [loading, setLoading] = useState(false);
 	const [onSignup] = useSignupMutation();
-	// formik initial datas
-	const postData = {
-		username: userName,
-		confirmPassword: confirmPassword,
-		emailAddress: emailAddress,
-		password: password,
-	};
-	const handleSubmit = async (postData, {setSubmitting}) => {
-		setSubmitting(true);
+
+	const handleSubmit = async () => {
 		setLoading(true);
+		const postData = {
+			username: userName,
+			confirmPassword: confirmPassword,
+			emailAddress: emailAddress,
+			password: password,
+		};
 
 		try {
 			const res = await onSignup(postData);
@@ -59,14 +58,12 @@ const SignIn = () => {
 						username: res?.data.data.newUser.username,
 					})
 				);
-				navigate("/");
+				navigate("/signin");
 				setLoading(false);
 			}
 		} catch (err) {
 			toast.error("there was an error: ", err);
 			setLoading(false);
-		} finally {
-			setSubmitting(false);
 		}
 	};
 	return (

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import {BiPlay} from "react-icons/Bi";
 import Button from "../button/button";
 import Input from "../input/input";
+import {PlayArrow} from "@mui/icons-material";
 const Form = ({onChange, value, onBlur}) => {
 	const [needHelp, setNeedHelp] = useState(false);
 
@@ -52,7 +52,7 @@ const Form = ({onChange, value, onBlur}) => {
 					<span
 						className={` text-gray-500 ${needHelp ? "rotate-90" : "rotate-0"}`}
 					>
-						<BiPlay className=" text-gray-500" />
+						<PlayArrow className=" text-gray-500" />
 					</span>
 					<p>Need help?</p>
 				</div>

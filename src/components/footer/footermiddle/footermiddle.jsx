@@ -10,10 +10,10 @@ const FooterMiddle = () => {
 	return (
 		<div className="w-full overflow-x-hidden">
 			<div className="bg-[#232F3E] flex items-center flex-col align-center">
-				<div className="w-full py-3 bg-[#485769] flex justify-center text-sm text-white">
+				<div className="w-full  py-3 bg-[#485769] flex justify-center text-sm text-white">
 					Back to top
 				</div>
-				<div className="mx-auto py-8 w-full md:w-[80%] text-center text-white">
+				<div className="px-8 py-8 w-full md:w-[80%] text-center text-white">
 					<div className="grid gap-2 text-start md:grid-cols-2 lg:grid-cols-4 lg:w-full">
 						{middlelistitems.map((item, index) => (
 							<FooterMiddleList

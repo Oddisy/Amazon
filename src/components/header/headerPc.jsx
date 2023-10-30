@@ -14,7 +14,7 @@ const HeaderPc = () => {
 
 	return (
 		<div className=" w-full flex justify-center  bg-amazon_background_bg">
-			<div className=" sticky top-0 flex items-center w-[95%] h-[58px] px-1 py-2  bg-amazon_background_bg ">
+			<div className="  sticky top-0 flex items-center w-[95%] h-[58px] px-1 py-2  bg-amazon_background_bg ">
 				{/* Image{amazonLogo} */}
 				<div className="flex items-center gap-6 mr-10 ">
 					<Link to="/">

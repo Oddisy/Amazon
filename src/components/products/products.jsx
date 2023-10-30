@@ -19,6 +19,7 @@ const Products = ({api}) => {
 								title={item.title}
 								description={item.description}
 								category={item.category}
+								price={item.price}
 								onClick={() =>
 									dispatch(
 										addToCart({
@@ -37,14 +38,7 @@ const Products = ({api}) => {
 						</div>
 					))
 				) : (
-					<p>
-						<div className="loading-container">
-							<div className="loading-ring"></div>
-							<p className="loading-text">
-								Please check your internet and try again
-							</p>
-						</div>
-					</p>
+					<p></p>
 				)}
 			</div>
 		</div>

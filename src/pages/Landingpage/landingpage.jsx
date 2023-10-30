@@ -10,6 +10,7 @@ const LandingPage = () => {
 	const [ApiData, setApiData] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [dots, setDots] = useState("...");
+	const [error, setError] = useState(false);
 
 	async function fetchProductApi() {
 		try {
@@ -17,13 +18,24 @@ const LandingPage = () => {
 			const data = response.data;
 			setApiData(data);
 			setIsLoading(false);
+			setError(false);
 		} catch (error) {
-			console.error("error fetching data", error);
+			setError(true);
 		}
 	}
 
 	useEffect(() => {
+		// Set a timer to trigger an error if the API request hasn't completed within 6 seconds
+		const timer = setTimeout(() => {
+			ApiData ? setError(false) : setError(true);
+		}, 6000);
+
 		fetchProductApi();
+
+		return () => {
+			// Clear the timer if the request completes before 4 seconds
+			clearTimeout(timer);
+		};
 	}, []);
 	// Function to animate the dots
 	const animateDots = () => {
@@ -38,19 +50,19 @@ const LandingPage = () => {
 	}, [dots]);
 	return (
 		<div>
-			{isLoading ? (
+			{error ? (
+				<div className="error-message ">
+					<i>Error, please check your internet and try again.</i>
+				</div>
+			) : isLoading ? (
 				<div
 					className={`italic absolute top-0 h-[100vh] w-[100%] flex items-center justify-center text-white
 					 bg-opacity-1  z-50 ${ApiData ? "bg-amazon_background_bg" : " "}`}
 				>
-					{isLoading ? (
-						<div>
-							<div className="loading-ring"></div>
-							<p className="loading-text">Loading{dots}</p>
-						</div>
-					) : (
-						<div>Error, please try again.</div>
-					)}
+					<div>
+						<div className="loading-ring"></div>
+						<p className="loading-text">Loading{dots}</p>
+					</div>
 				</div>
 			) : (
 				<div className="relative">

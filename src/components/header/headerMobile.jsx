@@ -32,8 +32,8 @@ const HeaderMobile = () => {
 	}, []);
 
 	return (
-		<div className="w-full absolute px-auto -top-4 pt-2 bg-amazon_background_bg">
-			<div className="w-[94%] flex items-center flex-col  py-2">
+		<div className="w-full absolute flex  items-center flex-col -top-4 pt-2 bg-amazon_background_bg">
+			<div className="w-[94%] flex items-center justify-center flex-col  py-2">
 				<div className="flex items-center justify-between w-[96%]  mb-2">
 					{/* Logo */}
 					<div className="w-1/2 flex justify-start">

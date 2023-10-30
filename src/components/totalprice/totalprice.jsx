@@ -2,6 +2,7 @@ import React from "react";
 import {CheckCircle} from "@mui/icons-material";
 import Button from "../button/button";
 import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
 
 function Totalprice({totalPrice}) {
 	const products = useSelector((state) => state.amazonReducer.products);
@@ -21,10 +22,12 @@ function Totalprice({totalPrice}) {
 					products.length !== 0 ? "$" + totalPrice : "$0"
 				}`}</span>
 			</p>
-			<Button
-				buttonText="Proceed to buy"
-				className="buttonStyle flex justify-center items-center py-1 mt-2 px-2"
-			/>
+			<Link to="/Signin">
+				<Button
+					buttonText="Proceed to buy"
+					className="buttonStyle flex justify-center items-center py-1 mt-2 px-2"
+				/>
+			</Link>
 		</div>
 	);
 }

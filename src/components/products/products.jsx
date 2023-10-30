@@ -37,7 +37,14 @@ const Products = ({api}) => {
 						</div>
 					))
 				) : (
-					<p>No Api</p>
+					<p>
+						<div className="loading-container">
+							<div className="loading-ring"></div>
+							<p className="loading-text">
+								Please check your internet and try again
+							</p>
+						</div>
+					</p>
 				)}
 			</div>
 		</div>

@@ -148,7 +148,7 @@ const HeaderMobile = () => {
 					</span>
 				</div>
 			</div>
-			<div className="flex w-[94%] py-2 px-4 bg-slate-700 text-amazon_white_text items-center">
+			<div className="flex w-[100%] py-2 px-4 bg-slate-700 text-amazon_white_text items-center">
 				<LocationOnIcon />
 				<div className=" text-[.8rem] ">
 					Deliver to Nigeria

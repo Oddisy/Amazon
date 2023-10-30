@@ -8,12 +8,12 @@ import {amazonLogo} from "../../exports";
 
 const FooterMiddle = () => {
 	return (
-		<div className="w-full overflow-x-hidden">
+		<div className="w-full">
 			<div className="bg-[#232F3E] flex items-center flex-col align-center">
 				<div className="w-full  py-3 bg-[#485769] flex justify-center text-sm text-white">
 					Back to top
 				</div>
-				<div className="px-8 py-8 w-full md:w-[80%] text-center text-white">
+				<div className="pl-8 py-8 w-full md:w-[80%] text-center text-white">
 					<div className="grid gap-2 text-start md:grid-cols-2 lg:grid-cols-4 lg:w-full">
 						{middlelistitems.map((item, index) => (
 							<FooterMiddleList
@@ -42,15 +42,15 @@ const FooterMiddle = () => {
 							/>
 						</span>
 						<div className="flex w-[97%] mx-auto text-[.8rem] gap-2">
-							<span className="h-8 w-32 border flex items-center justify-center text-gray-300 border-gray-400 hover:border-gray-50">
+							<span className="h-8 w-1/3 border flex items-center justify-center text-gray-300 border-gray-400 hover:border-gray-50">
 								<LanguageIcon className="text-[.5rem]" />
 								<span>English</span>
 							</span>
-							<span className="h-8 w-32 border flex items-center justify-center text-gray-300 border-gray-400 hover:border-gray-50">
+							<span className="h-8 w-1/3 border flex items-center justify-center text-gray-300 border-gray-400 hover:border-gray-50">
 								<AttachMoneyIcon className="text-[.5rem]" />
 								<span>Usd - U.S. Dollar</span>
 							</span>
-							<span className="h-8 w-32 border flex gap-2 items-center justify-center text-gray-300 border-gray-400 hover:border-gray-50">
+							<span className="h-8 w-1/3 border flex gap-2 items-center justify-center text-gray-300 border-gray-400 hover:border-gray-50">
 								<span>
 									<img className="h-4 w-8" src={usaFlag} alt="usa flag" />
 								</span>{" "}

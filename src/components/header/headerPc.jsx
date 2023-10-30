@@ -11,7 +11,6 @@ import {
 
 const HeaderPc = () => {
 	const products = useSelector((state) => state.amazonReducer.products);
-	console.log(products);
 
 	return (
 		<div className=" w-full flex justify-center  bg-amazon_background_bg">

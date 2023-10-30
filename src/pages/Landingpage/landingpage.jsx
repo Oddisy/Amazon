@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "../../components/navbar/navbar";
 import Hero from "../../components/hero/hero";
+import "./landingpage.css";
 import {Footer} from "../../components/exports";
 import Products from "../../components/products/products";
 import axios from "axios";
@@ -40,24 +41,31 @@ const LandingPage = () => {
 			{isLoading ? (
 				<div
 					className={`italic absolute top-0 h-[100vh] w-[100%] flex items-center justify-center text-white
-					 bg-opacity-[0.5]  z-50 ${ApiData ? "bg-amazon_background_bg" : " "}`}
+					 bg-opacity-1  z-50 ${ApiData ? "bg-amazon_background_bg" : " "}`}
 				>
 					{isLoading ? (
-						<div>Loading{dots}</div>
+						<div>
+							<div className="loading-ring"></div>
+							<p className="loading-text">Loading{dots}</p>
+						</div>
 					) : (
 						<div>Error, please try again.</div>
 					)}
 				</div>
 			) : (
-				<Products api={ApiData} />
+				<div className="relative">
+					{/* <Hero /> */}
+					<div className="absolute top-[20%] md:top-[50%]">
+						<Products api={ApiData} />
+						<div className={`${isLoading ? " hidden" : <p></p>}`}>
+							<NavBar />
+						</div>
+						<div className={`${isLoading ? " hidden" : <span></span>}`}>
+							<Footer />
+						</div>
+					</div>
+				</div>
 			)}
-			<div className={`${isLoading ? " hidden" : <p></p>}`}>
-				<NavBar />
-			</div>
-			{/* <Hero /> */}
-			<div className={`${isLoading ? " hidden" : <span></span>}`}>
-				<Footer />
-			</div>
 		</div>
 	);
 };

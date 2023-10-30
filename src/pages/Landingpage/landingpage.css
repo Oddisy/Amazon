@@ -1,10 +1,3 @@
-* {
-	margin: 0;
-}
-.productHover li:hover {
-	color: blue;
-	cursor: pointer;
-}
 .loading-container {
 	display: flex;
 	position: absolute;

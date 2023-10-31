@@ -1,4 +1,5 @@
 export const API = {
-	SIGN_UP: "api/v1/users/register",
-	LOGIN: "api/v1/users/login",
+	SIGN_UP: "signUpUser",
+	LOGIN: "login",
+	baseUrl: "https://growth-index.onrender.com/",
 };

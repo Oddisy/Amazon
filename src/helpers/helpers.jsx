@@ -8,7 +8,7 @@ export const ProtectedRoute = ({children}) => {
 	const tokenFromLocalStorage = localStorage.getItem("token");
 	useEffect(() => {
 		if (!(token || tokenFromLocalStorage)) {
-			navigate("/");
+			navigate("/Buy");
 		}
 	}, [token, tokenFromLocalStorage, navigate]);
 

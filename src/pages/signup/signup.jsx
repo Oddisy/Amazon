@@ -27,10 +27,10 @@ const SignIn = () => {
 	//   validationSchema ends here
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
-	const [userName, setUserName] = useState("");
+	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
-	const [emailAddress, setEmailAddress] = useState("");
+	const [email, setEmail] = useState("");
 
 	const [loading, setLoading] = useState(false);
 	const [onSignup] = useSignupMutation();
@@ -38,26 +38,16 @@ const SignIn = () => {
 	const handleSubmit = async () => {
 		setLoading(true);
 		const postData = {
-			username: userName,
-			confirmPassword: confirmPassword,
-			emailAddress: emailAddress,
+			username: username,
+			email: email,
 			password: password,
+			confirmPassword: confirmPassword,
 		};
 
 		try {
-			const res = await onSignup(postData);
+			const res = await onSignup(postData)?.unwrap();
 			if (res) {
-				dispatch(
-					setLoginEmailValues({
-						email: res?.data.data.newUser.emailAddress,
-					})
-				);
-				dispatch(
-					setLoginUserNameValues({
-						username: res?.data.data.newUser.username,
-					})
-				);
-				navigate("/signin");
+				navigate("/Signin");
 				setLoading(false);
 			}
 		} catch (err) {
@@ -94,8 +84,8 @@ const SignIn = () => {
 								<Input
 									htmlFor="name"
 									id="yourName"
-									value={userName}
-									onChange={(e) => setUserName(e.target.value)}
+									value={username}
+									onChange={(e) => setUsername(e.target.value)}
 									labelTextClassName="text-[.8rem] mb-1 font-bold"
 									labelText="Your name
                                     "
@@ -107,8 +97,8 @@ const SignIn = () => {
 								<Input
 									htmlFor="email"
 									id="email"
-									value={emailAddress}
-									onChange={(e) => setEmailAddress(e.target.value)}
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
 									labelTextClassName="text-[.8rem] mb-1 font-bold"
 									labelText="Mobile phone number or email"
 									inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
@@ -122,7 +112,7 @@ const SignIn = () => {
 									onChange={(e) => setPassword(e.target.value)}
 									labelText="password"
 									inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
-									type="Password"
+									type="passworc"
 									Re-enter
 									password
 								/>

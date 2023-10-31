@@ -1,6 +1,8 @@
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 import {API} from "./constant";
-const baseurl = import.meta.env.VITE_APP_SIGNUP_BASE_URL;
+// const baseurl = import.meta.env.VITE_APP_SIGNUP_BASE_URL;
+// console.log(baseurl);
+const baseurl = API.baseUrl;
 
 export const amazonApi = createApi({
 	reducerPath: "amazonSiteApi",

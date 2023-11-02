@@ -3,8 +3,8 @@ import React from "react";
 function Input({
 	htmlFor,
 	type,
-	fName,
-	yourName,
+	name,
+	id,
 	inputClassName,
 	labelTextClassName,
 	labelText,
@@ -18,9 +18,9 @@ function Input({
 			<label htmlFor={htmlFor}>
 				<p className={labelTextClassName}>{labelText}</p>
 				<input
-					id={yourName}
+					id={id}
 					type={type}
-					name={fName}
+					name={name}
 					placeholder={placeholder}
 					className={`${inputClassName}`}
 					onChange={onChange}

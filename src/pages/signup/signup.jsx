@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import {useDispatch} from "react-redux";
-import {Formik, Field, ErrorMessage, Form} from "formik";
+import {useFormik} from "formik";
 import * as Yup from "yup";
 import {useSignupMutation} from "../../app/api";
 import {amazonLogo} from "../../components/exports";
@@ -9,46 +8,60 @@ import Button from "../../components/button/button";
 import {toast} from "react-hot-toast";
 import Input from "../../components/input/input";
 import {PlayArrow} from "@mui/icons-material";
+// formik initial value
+const initialValues = {
+	username: "",
+	email: "",
+	password: "",
+	confirmPassword: "",
+};
 
 const SignIn = () => {
 	// yup validation schema
 	const validationSchema = Yup.object().shape({
 		username: Yup.string().required("Username is required"),
-		emailAddress: Yup.string()
-			.email("Invalid email address")
-			.required("Email is required"),
+		email: Yup.string()
+			.email("Invalid email address.")
+			.required("Email is required."),
 		password: Yup.string()
-			.min(8, "Password must be at least 8 characters")
-			.required("Password is required"),
+			.min(8, "Password must be at least 8 characters.")
+			.required("Password is required."),
+
 		confirmPassword: Yup.string()
-			.oneOf([Yup.ref("password"), null], "Passwords must match")
-			.required("Confirm Password is required"),
+			.oneOf([Yup.ref("password."), null], "Passwords must match.")
+			.required("Please confirm your password."),
 	});
+
 	//   validationSchema ends here
 	const navigate = useNavigate();
-	const dispatch = useDispatch();
-	const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
-	const [confirmPassword, setConfirmPassword] = useState("");
-	const [email, setEmail] = useState("");
 
 	const [loading, setLoading] = useState(false);
 	const [onSignup] = useSignupMutation();
+	const formik = useFormik({
+		initialValues,
+		validationSchema,
+	});
 
-	const handleSubmit = async () => {
+	const handleSubmit = async (e) => {
+		e.preventDefault();
 		setLoading(true);
+		// formik.resetForm();
+
 		const postData = {
-			username: username,
-			email: email,
-			password: password,
-			confirmPassword: confirmPassword,
+			username: formik.values.username,
+			email: formik.values.email,
+			password: formik.values.password,
+			confirmPassword: formik.values.confirmPassword,
 		};
 
 		try {
 			const res = await onSignup(postData)?.unwrap();
 			if (res) {
 				navigate("/Signin");
-				setLoading(false);
+				toast.success(
+					res.status ?? "You have successfully created an account😁"
+				);
+				setLoading(true);
 			}
 		} catch (err) {
 			toast.error("there was an error: ", err);
@@ -57,6 +70,12 @@ const SignIn = () => {
 	};
 	return (
 		<div className=" min-h-screen w-full overflow-y-hidden">
+			{/* loading animation */}
+			{loading && (
+				<div className="absolute bg-black bg-opacity-95 h-screen w-full flex items-center justify-center ">
+					<p className="text-white">Please, wait...</p>
+				</div>
+			)}
 			<div className=" flex items-center justify-center flex-col max-w-screen-xl mx-auto">
 				<div
 					className="w-full lg:w-1/2 h-auto lg:h-auto  pb-2 bg-[#FFFFFF] 
@@ -80,57 +99,103 @@ const SignIn = () => {
 							{/* sign up form header ends here */}
 							{/* Sign up form field */}
 
-							<form className="flex flex-col gap-4" action="#">
-								<Input
-									htmlFor="name"
-									id="yourName"
-									value={username}
-									onChange={(e) => setUsername(e.target.value)}
-									labelTextClassName="text-[.8rem] mb-1 font-bold"
-									labelText="Your name
+							<form
+								// onSubmit={handleSubmit}
+								className="flex flex-col gap-4"
+								action="#"
+							>
+								<div>
+									<Input
+										htmlFor="yourName"
+										id="yourName"
+										name="username"
+										value={formik.values.username}
+										onBlur={formik.handleBlur}
+										onChange={formik.handleChange}
+										labelTextClassName="text-[.8rem] mb-1 font-bold"
+										labelText="YourName
                                     "
-									placeholder="First and last name"
-									inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
-									type="name"
-								/>
-
-								<Input
-									htmlFor="email"
-									id="email"
-									value={email}
-									onChange={(e) => setEmail(e.target.value)}
-									labelTextClassName="text-[.8rem] mb-1 font-bold"
-									labelText="Mobile phone number or email"
-									inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
-									type="email"
-								/>
-								<Input
-									htmlFor="password"
-									labelTextClassName="text-[.8rem] mb-1 font-bold"
-									id="password"
-									value={password}
-									onChange={(e) => setPassword(e.target.value)}
-									labelText="password"
-									inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
-									type="passworc"
-									Re-enter
-									password
-								/>
-								<Input
-									htmlFor="Re-enter password"
-									labelTextClassName="text-[.8rem] mb-1 font-bold"
-									labelText="Re-enter password"
-									id="Re-enter password"
-									value={confirmPassword}
-									onChange={(e) => setConfirmPassword(e.target.value)}
-									inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
-									type="password"
-								/>
+										placeholder="First and last name"
+										inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
+										type="text"
+									/>
+									{formik.touched.username && formik.errors.username ? (
+										<div className="text-red-700 text-[0.8rem] italic  mt-1">
+											{" "}
+											{formik.errors.username}{" "}
+										</div>
+									) : null}
+								</div>
+								<div>
+									<Input
+										htmlFor="email"
+										id="email"
+										name="email"
+										value={formik.values.email}
+										onBlur={formik.handleBlur}
+										onChange={formik.handleChange}
+										labelTextClassName="text-[.8rem] mb-1 font-bold"
+										labelText="Mobile phone number or email"
+										inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
+										type="email"
+									/>
+									{formik.touched.email && formik.errors.email ? (
+										<div className="text-red-700 text-[0.8rem] italic mt-1">
+											{" "}
+											{formik.errors.email}{" "}
+										</div>
+									) : null}
+								</div>
+								<div>
+									<Input
+										htmlFor="password"
+										labelTextClassName="text-[.8rem] mb-1 font-bold"
+										id="password"
+										name="password"
+										value={formik.values.password}
+										placeholder="e.g Example1&"
+										onBlur={formik.handleBlur}
+										onChange={formik.handleChange}
+										labelText="password"
+										inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
+										type="password"
+										Re-enter
+										password
+									/>
+									{formik.touched.password && formik.errors.password ? (
+										<div className="text-red-700 text-[0.8rem] italic  mt-1 ">
+											{" "}
+											{formik.errors.password}{" "}
+										</div>
+									) : null}
+								</div>
+								<div>
+									<Input
+										htmlFor="Re-enter password"
+										labelTextClassName="text-[.8rem] mb-1 font-bold"
+										labelText="Re-enter password"
+										id="Re-enter password"
+										name="confirmPassword"
+										value={formik.values.confirmPassword}
+										onBlur={formik.handleBlur}
+										onChange={formik.handleChange}
+										inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
+										type="password"
+									/>
+									{formik.touched.confirmPassword &&
+									formik.errors.confirmPassword ? (
+										<div className="text-red-700 text-[0.8rem] italic  mt-1">
+											{" "}
+											{formik.errors.confirmPassword}{" "}
+										</div>
+									) : null}
+								</div>
 
 								<Button
-									buttonText="Continue"
-									className="py-1 flex items-center justify-center buttonStyle focus:shadow-outline-blue"
 									onClick={handleSubmit}
+									buttonText="Continue"
+									type="submit"
+									className="py-1 flex items-center justify-center buttonStyle focus:shadow-outline-blue"
 								/>
 							</form>
 							{/* sign up form field ends here  */}

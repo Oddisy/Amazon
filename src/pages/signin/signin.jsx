@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 // importing validation library for validations
 import {useFormik} from "formik";
 import * as Yup from "yup";
-Button;
 const initialValues = {
 	username: "",
 	password: "",
@@ -46,9 +45,9 @@ const Signin = () => {
 						</Link>
 						{/* sign in form */}
 						<Form
-							onChange={formik.handleChange}
-							value={formik.values.username}
-							onBlur={formik.handleBlur}
+						// onChange={formik.handleChange}
+						// value={formik.values.username}
+						// onBlur={formik.handleBlur}
 						/>
 						{/* sign in form ends here  */}
 						<div className="flex lg:w-[58%] w-[87%] sm:w-[55%] md:w-[50%]  pt-2  items-start">

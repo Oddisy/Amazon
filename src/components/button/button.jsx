@@ -1,15 +1,24 @@
 import React from "react";
 
-function Button({buttonText, className, onMouseEnter, onMouseLeave, onClick}) {
+function Button({
+	buttonText,
+	className,
+	type,
+	onMouseEnter,
+	onMouseLeave,
+	onClick,
+}) {
 	return (
-		<div
+		<button
 			onMouseEnter={onMouseEnter}
-			onMouseLeave={onmouseleave}
+			onMouseLeave={onMouseLeave}
+			buttonText={buttonText}
 			onClick={onClick}
+			type={type}
 			className={className}
 		>
 			{buttonText}
-		</div>
+		</button>
 	);
 }
 

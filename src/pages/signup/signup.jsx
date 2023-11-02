@@ -64,8 +64,7 @@ const SignUp = () => {
 				setLoading(true);
 			}
 		} catch (err) {
-			// console.log(res);
-			// toast.error(err.res.message);
+			toast.error("there was an error: ", err);
 			setLoading(false);
 		}
 	};

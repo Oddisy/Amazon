@@ -57,14 +57,14 @@ const SignUp = () => {
 		try {
 			const res = await onSignup(postData)?.unwrap();
 			if (res) {
-				navigate("/Signin");
+				navigate("/Buy");
 				toast.success(
 					res.status ?? "You have successfully created an account😁"
 				);
 				setLoading(true);
 			}
 		} catch (err) {
-			toast.error("there was an error: ", err);
+			toast.error("there was an error: ", err.message);
 			setLoading(false);
 		}
 	};

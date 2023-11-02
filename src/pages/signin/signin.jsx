@@ -72,14 +72,15 @@ const Signin = () => {
 							/>
 						</Link>
 						{/* sign in form */}
-						<div>
+						<>
+							{" "}
 							<Form
 								onChange={formik.handleChange}
 								value={formik.values.email}
 								onBlur={formik.handleBlur}
 								onClick={handleLogin}
 							/>
-						</div>
+						</>
 						{/* sign in form ends here  */}
 						<div className="flex lg:w-[58%] w-[87%] sm:w-[55%] md:w-[50%]  pt-2  items-start">
 							<span className=" mt-2 w-[29%] border-b-[0.3px] border-gray-300 "></span>

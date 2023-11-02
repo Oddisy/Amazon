@@ -1,5 +1,5 @@
 export const API = {
 	SIGN_UP: "signUpUser",
-	LOGIN: "login",
+	LOGIN: "loginuser",
 	baseUrl: "https://growth-index.onrender.com/",
 };

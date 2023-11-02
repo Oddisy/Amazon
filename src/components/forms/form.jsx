@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Button from "../button/button";
 import Input from "../input/input";
 import {PlayArrow} from "@mui/icons-material";
-const Form = ({onChange, value, onBlur}) => {
+const Form = ({onChange, onClick, value, onBlur}) => {
 	const [needHelp, setNeedHelp] = useState(false);
 
 	return (
@@ -25,6 +25,7 @@ const Form = ({onChange, value, onBlur}) => {
 
 				<Button
 					buttonText="Continue"
+					onClick={onClick}
 					className="py-1 flex items-center justify-center buttonStyle focus:shadow-outline-blue"
 				/>
 			</form>

@@ -1,16 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import {Form, amazonLogo} from "../../components/exports";
 import Button from "../../components/button/button";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 // importing validation library for validations
 import {useFormik} from "formik";
 import * as Yup from "yup";
+import {useDispatch} from "react-redux";
+import {useLoginMutation} from "../../app/api";
 const initialValues = {
 	username: "",
 	password: "",
-};
-const onSubmit = (values) => {
-	// console.log("form value", values);
 };
 
 const validationSchema = Yup.object({
@@ -22,12 +21,41 @@ const validationSchema = Yup.object({
 });
 
 const Signin = () => {
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const [loading, setLoading] = useState(false);
+	const [onLogin] = useLoginMutation();
 	// store formik fields in a variable
 	const formik = useFormik({
 		initialValues,
-		onSubmit,
 		validationSchema,
 	});
+	const handleLogin = async () => {
+		setLoading(true);
+		try {
+			const postData = {
+				username: formik.values.username,
+				password: formik.values.password,
+			};
+			const res = await onLogin(postData);
+			if (res) {
+				dispatch(
+					setUserValues({
+						token: res.data.token,
+						email: res.data.email,
+						username: res.data.username,
+					})
+				);
+				navigate("/Buy");
+			}
+		} catch (err) {
+			console.error("Error logging in:", err);
+			toast.error("There was an error logging in.");
+		} finally {
+			setLoading(false);
+		}
+	};
+
 	return (
 		<div className=" min-h-screen w-full overflow-y-hidden">
 			<div className=" flex items-center justify-center flex-col max-w-screen-xl mx-auto">
@@ -44,11 +72,14 @@ const Signin = () => {
 							/>
 						</Link>
 						{/* sign in form */}
-						<Form
-						// onChange={formik.handleChange}
-						// value={formik.values.username}
-						// onBlur={formik.handleBlur}
-						/>
+						<div>
+							<Form
+								onChange={formik.handleChange}
+								value={formik.values.email}
+								onBlur={formik.handleBlur}
+								onClick={handleLogin}
+							/>
+						</div>
 						{/* sign in form ends here  */}
 						<div className="flex lg:w-[58%] w-[87%] sm:w-[55%] md:w-[50%]  pt-2  items-start">
 							<span className=" mt-2 w-[29%] border-b-[0.3px] border-gray-300 "></span>

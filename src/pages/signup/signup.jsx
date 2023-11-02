@@ -16,7 +16,7 @@ const initialValues = {
 	confirmPassword: "",
 };
 
-const SignIn = () => {
+const SignUp = () => {
 	// yup validation schema
 	const validationSchema = Yup.object().shape({
 		username: Yup.string().required("Username is required"),
@@ -64,7 +64,8 @@ const SignIn = () => {
 				setLoading(true);
 			}
 		} catch (err) {
-			toast.error("there was an error: ", err);
+			// console.log(res);
+			// toast.error(err.res.message);
 			setLoading(false);
 		}
 	};
@@ -265,4 +266,4 @@ const SignIn = () => {
 	);
 };
 
-export default SignIn;
+export default SignUp;

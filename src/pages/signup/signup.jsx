@@ -115,7 +115,7 @@ const SignUp = () => {
 										labelTextClassName="text-[.8rem] mb-1 font-bold"
 										labelText="YourName
                                     "
-										placeholder="First and last name"
+										placeholder="Full Name"
 										inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
 										type="text"
 									/>
@@ -131,6 +131,7 @@ const SignUp = () => {
 										htmlFor="email"
 										id="email"
 										name="email"
+										placeholder="example@gmail.com"
 										value={formik.values.email}
 										onBlur={formik.handleBlur}
 										onChange={formik.handleChange}

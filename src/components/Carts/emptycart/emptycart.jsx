@@ -9,7 +9,10 @@ function Emptycart() {
 				<div className="col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 flex flex-col gap-4">
 					<Emptycartleft />
 					<div className="min-h-[77px] bg-white"></div>
-					<p className="text-[.8rem] font-[400] w-[1005px] ">
+					<p
+						className="text-[.8rem] font-[400] w-500px md:w-700px
+					} lg:w-[1005px] "
+					>
 						The price and availability of items at Amazon.com are subject to
 						change. The Cart is a temporary place to store a list of your items
 						and reflects each item's most recent.{" "}

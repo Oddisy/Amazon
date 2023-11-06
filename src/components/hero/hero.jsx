@@ -12,19 +12,20 @@ const Hero = () => {
 	const slides = [istockPhoto1, istockPhoto2, istockPhoto3, istockPhoto4];
 	const [currSlide, setCurrSlide] = useState(0);
 	const slideRef = useRef();
-	const intervalRef = useRef();
 	const startAutomaticSlideshow = () => {
-		intervalRef.current = setInterval(() => {
+		slideRef.current = setInterval(() => {
 			handleNextClick();
 		}, 2000);
 	};
 
 	useEffect(() => {
-		startAutomaticSlideshow();
+		setInterval(() => {
+			startAutomaticSlideshow();
+		}, 3000);
 		return () => {
-			clearInterval(intervalRef.current); // Clear the interval when the component unmounts
+			clearInterval(slideRef.current); // Clear the interval when the component unmounts
 		};
-	}, [startAutomaticSlideshow]);
+	}, []);
 
 	const handleNextClick = () => {
 		if (slideRef.current) {
@@ -79,7 +80,7 @@ const Hero = () => {
 				}, 100);
 			}
 
-			clearInterval(intervalRef.current); // Stop automatic slideshow when manually navigating
+			clearInterval(slideRef.current); // Stop automatic slideshow when manually navigating
 			startAutomaticSlideshow(); // Restart automatic slideshow
 		}
 	};
@@ -92,11 +93,11 @@ const Hero = () => {
 					ref={slideRef}
 					src={slides[currSlide]}
 				/>
-				<div className="absolute hidden  top-[50%] w-full md:flex md:visible justify-between ">
+				<div className="absolute hidden top-[50%] w-full md:flex md:visible justify-between">
 					<button className="mr-20" onClick={handleManualNavigation}>
 						Go
 					</button>
-					<button onClick={handlePrevClick}>Back</button>
+					<button onClick={handlePrevClick}></button>
 				</div>
 			</div>
 		</main>

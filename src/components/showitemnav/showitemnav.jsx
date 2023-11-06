@@ -5,9 +5,7 @@ function ShowItemNav({isHovered}) {
 	return (
 		<ul
 			className={` bg-gray-200 absolute  flex flex-col  w-[100%]  transition-transform duration-700  ${
-				{isHovered}
-					? "translate-y-20  duration-500 "
-					: "translate-y-20 duration-300 "
+				{isHovered} ? "translate-y-10 transition-all  duration-500 " : "" //"translate-y-[5rem] duration-300 "
 			}`}
 		>
 			<li className=" productHover productLi">

@@ -66,7 +66,7 @@ const LandingPage = () => {
 				</div>
 			) : (
 				<div className="relative">
-					<Hero />
+					{/* <Hero /> */}
 					<div className="absolute top-[20%] md:top-[50%]">
 						<Products api={ApiData} />
 						<div className={`${isLoading ? " hidden" : <p></p>}`}>

@@ -2,7 +2,6 @@ import React from "react";
 
 function Input({
 	htmlFor,
-	type,
 	name,
 	id,
 	inputClassName,
@@ -12,23 +11,22 @@ function Input({
 	onChange,
 	value,
 	onBlur,
+	type,
 }) {
 	return (
-		<>
-			<label htmlFor={htmlFor}>
-				<p className={labelTextClassName}>{labelText}</p>
-				<input
-					id={id}
-					type={type}
-					name={name}
-					placeholder={placeholder}
-					className={`${inputClassName}`}
-					onChange={onChange}
-					value={value}
-					onBlur={onBlur}
-				/>
-			</label>
-		</>
+		<label htmlFor={htmlFor}>
+			<p className={labelTextClassName}>{labelText}</p>
+			<input
+				id={id}
+				type={type}
+				name={name}
+				placeholder={placeholder}
+				className={`${inputClassName}`}
+				onChange={onChange}
+				value={value}
+				onBlur={onBlur}
+			/>
+		</label>
 	);
 }
 

@@ -1,7 +1,7 @@
 import React from "react";
 
 function Button({
-	buttonText,
+	buttontext,
 	className,
 	type,
 	onMouseEnter,
@@ -12,12 +12,11 @@ function Button({
 		<button
 			onMouseEnter={onMouseEnter}
 			onMouseLeave={onMouseLeave}
-			buttonText={buttonText}
 			onClick={onClick}
 			type={type}
 			className={className}
 		>
-			{buttonText}
+			{buttontext}
 		</button>
 	);
 }

@@ -18,6 +18,7 @@ const initialValues = {
 
 const SignUp = () => {
 	// yup validation schema
+
 	const validationSchema = Yup.object().shape({
 		username: Yup.string().required("Username is required"),
 		email: Yup.string()
@@ -57,14 +58,15 @@ const SignUp = () => {
 		try {
 			const res = await onSignup(postData)?.unwrap();
 			if (res) {
-				navigate("/Buy");
+				navigate("/Signin");
 				toast.success(
 					res.status ?? "You have successfully created an account😁"
 				);
+
 				setLoading(true);
 			}
 		} catch (err) {
-			toast.error("there was an error: ", err.message);
+			toast.error("there was an error: ", err.message.status);
 			setLoading(false);
 		}
 	};
@@ -113,7 +115,7 @@ const SignUp = () => {
 										onBlur={formik.handleBlur}
 										onChange={formik.handleChange}
 										labelTextClassName="text-[.8rem] mb-1 font-bold"
-										labelText="YourName
+										labelText="Full Name
                                     "
 										placeholder="Full Name"
 										inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
@@ -194,7 +196,7 @@ const SignUp = () => {
 
 								<Button
 									onClick={handleSubmit}
-									buttonText="Continue"
+									buttontext="Continue"
 									type="submit"
 									className="py-1 flex items-center justify-center buttonStyle focus:shadow-outline-blue"
 								/>

@@ -2,7 +2,19 @@ import React, {useState} from "react";
 import Button from "../button/button";
 import Input from "../input/input";
 import {PlayArrow} from "@mui/icons-material";
-const Form = ({onChange, onClick, value, onBlur}) => {
+const Form = ({
+	onChange,
+	onClick,
+	value,
+	onBlur,
+	htmlFor,
+	labelTextClassName,
+	labelText,
+	inputClassName,
+	type,
+	email,
+	onSubmit,
+}) => {
 	const [needHelp, setNeedHelp] = useState(false);
 
 	return (
@@ -15,17 +27,28 @@ const Form = ({onChange, onClick, value, onBlur}) => {
 				<Input
 					htmlFor="email"
 					labelTextClassName="text-[.8rem] mb-1 font-semibold"
-					labelText="Email or mobile phone number"
+					labelText="Full Name"
 					inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
-					type="email"
+					type={email ? "email" : "text"}
+					onChange={onChange}
+					onBlur={onBlur}
+					value={value}
+				/>
+				<Input
+					htmlFor={htmlFor}
+					labelTextClassName={labelTextClassName}
+					labelText={labelText}
+					inputClassName={inputClassName}
+					type={type}
 					onChange={onChange}
 					onBlur={onBlur}
 					value={value}
 				/>
 
 				<Button
-					buttonText="Continue"
+					buttontext="Continue"
 					onClick={onClick}
+					onSubmit={onSubmit}
 					className="py-1 flex items-center justify-center buttonStyle focus:shadow-outline-blue"
 				/>
 			</form>

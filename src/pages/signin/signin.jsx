@@ -2,11 +2,13 @@ import React, {useState} from "react";
 import {Form, amazonLogo} from "../../components/exports";
 import Button from "../../components/button/button";
 import {Link, useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
 // importing validation library for validations
-import {useFormik} from "formik";
+import {Formik, useFormik} from "formik";
 import * as Yup from "yup";
 import {useDispatch} from "react-redux";
 import {useLoginMutation} from "../../app/api";
+import Input from "../../components/input/input";
 const initialValues = {
 	username: "",
 	password: "",
@@ -21,15 +23,14 @@ const validationSchema = Yup.object({
 });
 
 const Signin = () => {
+	const loginPassword = useSelector((state) => state?.auth?.password);
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const [loading, setLoading] = useState(false);
 	const [onLogin] = useLoginMutation();
+
 	// store formik fields in a variable
-	const formik = useFormik({
-		initialValues,
-		validationSchema,
-	});
+
 	const handleLogin = async () => {
 		setLoading(true);
 		try {
@@ -55,6 +56,11 @@ const Signin = () => {
 			setLoading(false);
 		}
 	};
+	const formik = useFormik({
+		initialValues,
+		validationSchema,
+		onSubmit: handleLogin,
+	});
 
 	return (
 		<div className=" min-h-screen w-full overflow-y-hidden">
@@ -71,16 +77,29 @@ const Signin = () => {
 								alt=""
 							/>
 						</Link>
-						{/* sign in form */}
-						<>
-							{" "}
-							<Form
-								onChange={formik.handleChange}
-								value={formik.values.email}
-								onBlur={formik.handleBlur}
-								onClick={handleLogin}
-							/>
-						</>
+						{/* sign in form */}{" "}
+						<Form
+							onSubmit={formik.handleLogin}
+							htmlFor="password"
+							labelText="Password"
+							type="password"
+							labelTextClassName="text-[.8rem] mb-1 font-semibold"
+							inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
+						>
+							<div>
+								<Input
+									type="password"
+									labelTextClassName="text-[.8rem] mb-1 font-semibold"
+									labelText="Email or mobile phone number"
+								/>
+								{formik.touched.username && formik.errors.username ? (
+									<div className="text-red-700 text-[0.8rem] italic  mt-1">
+										{" "}
+										{formik.errors.username}{" "}
+									</div>
+								) : null}
+							</div>
+						</Form>
 						{/* sign in form ends here  */}
 						<div className="flex lg:w-[58%] w-[87%] sm:w-[55%] md:w-[50%]  pt-2  items-start">
 							<span className=" mt-2 w-[29%] border-b-[0.3px] border-gray-300 "></span>
@@ -96,7 +115,7 @@ const Signin = () => {
 						>
 							<Button
 								className="py-1 w-full focus:shadow-outline-blue  text-[0.9rem] drop-shadow-lg  hover:bg-gray-200 bg-gray-50 bg-gradient-to-tr from-gray-50 to-gray-50; px-0 flex items-center justify-center buttonStyle"
-								buttonText="Create your Amazon account"
+								buttontext="Create your Amazon account"
 							/>
 						</Link>
 					</div>

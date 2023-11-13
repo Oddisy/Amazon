@@ -34,9 +34,9 @@ function Cart() {
 					</div>
 				</div>
 			) : (
-				<>
+				<div>
 					<Emptycart />
-				</>
+				</div>
 			)}
 		</>
 	);

@@ -83,7 +83,7 @@ function Shoppingcart() {
 			<div className="w-full sm:w-32 mt-4 mb-4">
 				<Button
 					onClick={() => dispatch(resetCart())}
-					buttonText="Clear Cart"
+					buttontext="Clear Cart"
 					className="cursor-pointer text-sm font-semibold text-white px-2 w-full py-2 rounded-md flex justify-center bg-red-500 hover:bg-red-500 active:bg-red-600"
 				/>
 			</div>

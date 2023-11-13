@@ -58,7 +58,7 @@ const SignUp = () => {
 		try {
 			const res = await onSignup(postData)?.unwrap();
 			if (res) {
-				navigate("/Signin");
+				navigate("/Buy");
 				toast.success(
 					res.status ?? "You have successfully created an account😁"
 				);
@@ -115,9 +115,9 @@ const SignUp = () => {
 										onBlur={formik.handleBlur}
 										onChange={formik.handleChange}
 										labelTextClassName="text-[.8rem] mb-1 font-bold"
-										labelText="Full Name
+										labelText="Username
                                     "
-										placeholder="Full Name"
+										placeholder="example212"
 										inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
 										type="text"
 									/>

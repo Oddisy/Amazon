@@ -28,7 +28,7 @@
 		@apply bottom-[60%] duration-0;
 	}
 	.buttonStyle {
-		@apply px-28 py-2 w-full cursor-pointer font-semibold rounded-lg 
+		@apply px-28 py-2 w-full cursor-pointer font-semibold rounded-lg active:bg-yellow-700 
         bg-yellow-300 bg-gradient-to-tr from-yellow-400 to-yellow-200;
 	}
 	.shadow-outline-blue {

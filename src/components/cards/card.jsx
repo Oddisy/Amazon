@@ -41,10 +41,10 @@ const Card = ({onClick, src, title, price, category, description}) => {
 					onMouseEnter={() => setIsHovered(false)}
 					onMouseLeave={() => setIsHovered(true)}
 					onClick={onClick}
-					buttonText="Add Cart."
+					buttontext="Add Cart."
 					className={cn(
 						`buttonStyle
-						${isHovered ? "hover:bg-yellow-500 active:bg-yellow-700" : ""}`
+						${isHovered ? "hover:bg-yellow-500 " : ""}`
 					)}
 				/>
 			</div>

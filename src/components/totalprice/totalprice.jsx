@@ -24,7 +24,7 @@ function Totalprice({totalPrice}) {
 			</p>
 			<Link to="/Signin">
 				<Button
-					buttonText="Proceed to buy"
+					buttontext="Proceed to buy"
 					className="buttonStyle flex justify-center items-center py-1 mt-2 px-2"
 				/>
 			</Link>

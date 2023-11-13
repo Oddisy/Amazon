@@ -13,6 +13,9 @@ const initialValues = {
 	username: "",
 	password: "",
 };
+const Loo = () => {
+	console.log("yessss");
+};
 
 const validationSchema = Yup.object({
 	username: Yup.string()
@@ -59,7 +62,7 @@ const Signin = () => {
 	const formik = useFormik({
 		initialValues,
 		validationSchema,
-		onSubmit: handleLogin,
+		// onSubmit: handleLogin,
 	});
 
 	return (
@@ -79,27 +82,14 @@ const Signin = () => {
 						</Link>
 						{/* sign in form */}{" "}
 						<Form
-							onSubmit={formik.handleLogin}
+							// onSubmit={formik.handleLogin}
+							onClick={handleLogin}
 							htmlFor="password"
 							labelText="Password"
 							type="password"
 							labelTextClassName="text-[.8rem] mb-1 font-semibold"
 							inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
-						>
-							<div>
-								<Input
-									type="password"
-									labelTextClassName="text-[.8rem] mb-1 font-semibold"
-									labelText="Email or mobile phone number"
-								/>
-								{formik.touched.username && formik.errors.username ? (
-									<div className="text-red-700 text-[0.8rem] italic  mt-1">
-										{" "}
-										{formik.errors.username}{" "}
-									</div>
-								) : null}
-							</div>
-						</Form>
+						/>
 						{/* sign in form ends here  */}
 						<div className="flex lg:w-[58%] w-[87%] sm:w-[55%] md:w-[50%]  pt-2  items-start">
 							<span className=" mt-2 w-[29%] border-b-[0.3px] border-gray-300 "></span>

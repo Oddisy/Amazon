@@ -4,7 +4,8 @@ import {useNavigate} from "react-router-dom";
 
 export const ProtectedRoute = ({children}) => {
 	const navigate = useNavigate();
-	const token = useSelector((state) => state?.auth?.token);
+	const token = useSelector((state) => state.amazonSiteApi);
+	console.log(token);
 	const tokenFromLocalStorage = localStorage.getItem("token");
 	useEffect(() => {
 		if (!(token || tokenFromLocalStorage)) {

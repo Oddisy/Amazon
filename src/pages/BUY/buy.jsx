@@ -1,14 +1,17 @@
 import React from "react";
-// import amazonLogo from "amazonLogo.png";
+import {Link} from "react-router-dom";
 
 function Buy() {
 	return (
-		<div>
-			<header>
-				<div>{/* <img src={amazonLogo} alt="amazonLogo" /> */}</div>
-				<div>dcnsm nm </div>
-				<div> l.,ma vcem</div>
-			</header>
+		<div className="w-full min-h-screen bg-black text-white flex items-center flex-col gap-4 justify-center">
+			<div>
+				<i>Site is under construction please check later</i>{" "}
+			</div>
+
+			<Link to="/">
+				<div className="text-3xl">Continue shopping</div>
+			</Link>
+			<div></div>
 		</div>
 	);
 }

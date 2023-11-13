@@ -65,9 +65,9 @@ const LandingPage = () => {
 					</div>
 				</div>
 			) : (
-				<div className="relative">
+				<div className="relative w-full">
 					{/* <Hero /> */}
-					<div className="absolute top-[20%] md:top-[50%]">
+					<div className="absolute top-[20%] w-[100%] md:top-[50%]">
 						<Products api={ApiData} />
 						<div className={`${isLoading ? " hidden" : <p></p>}`}>
 							<NavBar />

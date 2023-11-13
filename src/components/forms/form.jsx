@@ -27,7 +27,7 @@ const Form = ({
 				<Input
 					htmlFor="email"
 					labelTextClassName="text-[.8rem] mb-1 font-semibold"
-					labelText="Full Name"
+					labelText="Username"
 					inputClassName="w-full rounded-sm outline-none p-2 h-8 border-[0.1px] border-gray-500 focus:shadow-outline-blue"
 					type={email ? "email" : "text"}
 					onChange={onChange}
